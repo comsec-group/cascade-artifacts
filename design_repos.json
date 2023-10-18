@@ -1,0 +1,19 @@
+{
+    "cva6": "/cascade-cva6/cascade",
+    "cva6-c1": "/cascade-cva6-c1/cascade",
+    "cva6-y1": "/cascade-cva6-y1/cascade",
+    "rocket": "/cascade-chipyard/cascade-rocket",
+    "boom": "/cascade-chipyard/cascade-boom",
+    "boom-b1": "/cascade-chipyard-b1/cascade-boom",
+    "picorv32": "/cascade-picorv32/cascade",
+    "picorv32-p5": "/cascade-picorv32-p5/cascade",
+    "kronos": "/cascade-kronos/cascade",
+    "kronos-k1": "/cascade-kronos-k1/cascade",
+    "kronos-k2": "/cascade-kronos-k2/cascade",
+    "vexriscv": "/cascade-vexriscv/cascade",
+    "vexriscv-v1-7": "/cascade-vexriscv-v1-7/cascade",
+    "vexriscv-v8-9-v15": "/cascade-vexriscv-v8-9-v15/cascade",
+    "vexriscv-v10-11": "/cascade-vexriscv-v10-11/cascade",
+    "vexriscv-v12": "/cascade-vexriscv-v12/cascade",
+    "vexriscv-v13": "/cascade-vexriscv-v13/cascade"
+}
