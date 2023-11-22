@@ -135,6 +135,11 @@ Mapping to the paper's figures:
 | 19              | security_implications     |
 | 20              | reduction_perf            |
 
+#### Re-producing the register coverage of Cascade and DifuzzRTL
+
+For convenience, we provide the logs of the execution of Cascade and DifuzzRTL as `.log.tgz` files.
+To reproduce the results, we kindly redirect you to [the dedicated repository](https://github.com/cascade-artifacts-designs/cascade-difuzzrtl-verilator/#cascade-artifacts-regarding-the-collection-of-the-difuzzrtl-coverage-metric).
+
 #### Questasim experiment (Optional)
 
 The Questasim experiment, optional, is the only experiment that must be partially run outside of the Docker container.
@@ -185,3 +190,21 @@ The experiment may take many hours and can be divided in two parts:
 The result is stored in the file `modelsim.png` in the local `cascade-meta/figures` directory.
 
 ![cascade logo](https://github.com/comsec-group/cascade-artifacts/assets/28906668/0fbbf474-4479-4bf9-96df-43c520f3ae8e)
+
+### Additional information
+
+#### Description of detailed steps
+
+In `step_descriptions.md`, we provide a mapping of the overview figure from the paper (Figure 3).
+
+#### A minimal running example
+
+To run a minimal example, you can follow the following steps:
+
+First, adapt `descriptor` in `cascade-meta/fuzzer/do_fuzzsingle.py` to the parameters of your choice in terms of memory size, target design, random seed, maximal number of basic blocks and inclusion of privileged instructions.
+Second, run this script through `python3 cascade-meta/fuzzer/do_fuzzsingle.py`.
+This will execute all steps until and including the DUT run.
+If you would like, instead, to fuzz with many programs, use `python3 cascade-meta/fuzzer/do_fuzzdesign.py` instead. Please check the file header comments on which are the command-line parameters.
+
+Assuming that this run raises a non-termination or mismatch, you can then run the reduction step through `python3 cascade-meta/reduce/do_reduce.py`, after setting its `descriptor` variable to the same value as in the fuzzing step.
+This will execute all steps from the reduction step onwards and produce two executable files, whose difference reveals the head and tail instructions.
