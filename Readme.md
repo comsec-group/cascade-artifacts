@@ -208,3 +208,9 @@ If you would like, instead, to fuzz with many programs, use `python3 cascade-met
 
 Assuming that this run raises a non-termination or mismatch, you can then run the reduction step through `python3 cascade-meta/reduce/do_reduce.py`, after setting its `descriptor` variable to the same value as in the fuzzing step.
 This will execute all steps from the reduction step onwards and produce two executable files, whose difference reveals the head and tail instructions.
+
+#### Incorporating a new design
+
+To incorporate a new design and fuzz it with Cascade, please take the two following steps:
+- Create a design repository, based on the existing design examples. In particular, create a `<design-repo>/cascade/meta` directory that a few essential configuration information for Cascade. You will have to create the `make run_vanilla_notrace`. You may, but do not have to, adapt `cascade-meta/fuzzer/cascade/fuzzsim.py` according to your needs.
+- Add an entry with the name of your choice in `cascade-meta/design-processing/design_repos.json`.
