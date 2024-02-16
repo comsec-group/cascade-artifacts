@@ -206,7 +206,7 @@ Second, run this script through `python3 cascade-meta/fuzzer/do_fuzzsingle.py`.
 This will execute all steps until and including the DUT run.
 If you would like, instead, to fuzz with many programs, use `python3 cascade-meta/fuzzer/do_fuzzdesign.py` instead. Please check the file header comments on which are the command-line parameters.
 
-Assuming that this run raises a non-termination or mismatch, you can then run the reduction step through `python3 cascade-meta/reduce/do_reduce.py`, after setting its `descriptor` variable to the same value as in the fuzzing step.
+Assuming that this run raises a non-termination or mismatch, you can then run the reduction step through `python3 cascade-meta/fuzzer/do_reducesingle.py`, after setting its `descriptor` variable to the same value as in the fuzzing step.
 This will execute all steps from the reduction step onwards and produce two executable files, whose difference reveals the head and tail instructions.
 
 #### Incorporating a new design
