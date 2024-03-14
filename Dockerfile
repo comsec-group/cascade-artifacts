@@ -245,8 +245,8 @@ RUN bash -c "source /cascade-meta/env.sh && cd /cascade-meta/fuzzer && python3 d
 # - For DifuzzRTL, run `cd /cascade-difuzzrtl/docker/shareddir/savedockerdifuzzrtl/Fuzzer && make SIM_BUILD=builddir VFILE=RocketTile_state TOPLEVEL=RocketTile NUM_ITER=50000 OUT=outdir_difuzz IS_CASCADE=0 IS_RECORD=0 SPIKE=/opt/riscv/bin/spike`
 # - For Cascade, first generate 5000 ELFs using `python3 genmanyelfs.py 5000` in cascade-meta, then apply `python3 cascade_elf_to_hex.py` in cascade-difuzzrtl (by adapting the paths), and finally run `cd /cascade-difuzzrtl/docker/shareddir/savedockerdifuzzrtl/Fuzzer && make SIM_BUILD=builddir VFILE=RocketTile_state TOPLEVEL=RocketTile NUM_ITER=50000 OUT=outdir_cascade IS_CASCADE=1 IS_RECORD=0 SPIKE=/opt/riscv/bin/spike`
 # In these "make" recipes, make sure to execute the correct (legacy) versions of cocotb and Verilator
-COPY out_rocket_state.log /
-COPY out_rocket_state_cascade.log /
+COPY out_rocket_state.log.tgz /
+COPY out_rocket_state_cascade.log.tgz /
 
 # Compare the control register coverage. This generates `difuzzrtl_coverage.png`.
 RUN bash -c "source /cascade-meta/env.sh && cd /cascade-meta/fuzzer && python3 do_collect_difuzz_coverage.py"
