@@ -6,7 +6,8 @@
 
 Welcome to the artifacts for Cascade!
 This repository will help you reproduce the results presented in our paper, and will get you started with Cascade without worrying too much about setting up the context.
-For more information about Cascade, visit https://comsec.ethz.ch/cascade
+For more information about Cascade, visit https://comsec.ethz.ch/cascade.
+Most of the fuzzing code is located here https://github.com/cascade-artifacts-designs/cascade-meta.
 
 The repository is structured as follows.
 First, we indicate a few requirements.
